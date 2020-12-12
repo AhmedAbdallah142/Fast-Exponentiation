@@ -9,7 +9,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import javax.swing.*;
 
 public class LineChart extends JFrame {
-	private static dataController data;
+	private static DataController data;
 
 	private static final long serialVersionUID = 1L;
 
@@ -110,7 +110,7 @@ public class LineChart extends JFrame {
 				{ 2097152, 3000000, 4194303 }, { 4194304, 6000000, 8388607 }, { 8388608, 10000000, 16777215 },
 				{ 16777216, 20000000, 33554431 }, { 33554432, 50000000, 67108863 }, { 67108864, 100000000, 134217727 },
 				{ 134217728, 190000000, 268435455 }, { 268435456, 350000000, 536870912 } };
-		data = new dataController(values);
+		data = new DataController(values);
 		data.setData();
 		SwingUtilities.invokeLater(() -> {
 			LineChart example = new LineChart("Naive1 Line Chart");

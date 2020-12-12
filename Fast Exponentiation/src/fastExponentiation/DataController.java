@@ -1,13 +1,13 @@
 package fastExponentiation;
 
-public class dataController {
+public class DataController {
 	public long[][] values;
 	public double[][] naive1;
 	public double[][] naive2;
 	public double[][] iterative;
 	public double[][] recursion;
 
-	public dataController(long[][] values) {
+	public DataController(long[][] values) {
 		this.values = values;
 		this.naive1 = new double[values.length][2];
 		this.naive2 = new double[values.length][2];

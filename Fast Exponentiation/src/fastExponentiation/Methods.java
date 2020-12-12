@@ -29,17 +29,16 @@ public class Methods {
 	}
 
 	public int fastExponentiationIterative(long a, long b, long m) {
-		String binaryRep = Long.toBinaryString(b);
+		String binaryRep = Long.toBinaryString(b);// convert b to it's binary Value
 		long x = 1;
 		long pow = a % m;
 		for (int i = binaryRep.length() - 1; i >= 0; i--) {
-			if (binaryRep.charAt(i) == '1') {
+			if (binaryRep.charAt(i) == '1') {// check if the binary representation of b equal 1 at index i
 				x = (x * pow) % m;
 			}
 			pow = (pow * pow);
-			if (pow > Integer.MAX_VALUE) {
-				// System.out.println("Over Flow");
-				return -1;
+			if (pow > Integer.MAX_VALUE) {// check Over flow
+				return -1;// return -1 if Over flow Occured
 			}
 			pow = pow % m;
 		}
@@ -54,21 +53,18 @@ public class Methods {
 			return (int) (a % m);
 		} else if (b == 2) {
 			x = a * a;
-			if (x > Integer.MAX_VALUE) {
-				// System.out.println("Over Flow");
-				return -1;
+			if (x > Integer.MAX_VALUE) {// check Over flow
+				return -1;// return -1 if Over flow Occured
 			}
 			x = x % m;
 			return (int) x;
 		} else {
-
-			if (b % 2 == 0) {
+			if (b % 2 == 0) { // check if b is even
 				x = fastExponentiationRecursive(a, b / 2, m);
-				if (x == -1)
+				if (x == -1) //check if return -1 from the recursive function
 					return -1;
 				x = (x * x);
 				if (x > Integer.MAX_VALUE) {
-					// System.out.println("Over Flow");
 					return -1;
 				}
 				x = x % m;
@@ -78,7 +74,6 @@ public class Methods {
 					return -1;
 				x = x * (a % m);
 				if (x > Integer.MAX_VALUE) {
-					// System.out.println("Over Flow");
 					return -1;
 				}
 				x = x % m;
