@@ -10,7 +10,6 @@ public class Methods {
 		C= C % m;
 		return C;
 	}
-	
 	public int naive2(int a,int b,int m) {
 		int C = 1;
 		for (int i=0;i<b;i++ ) {

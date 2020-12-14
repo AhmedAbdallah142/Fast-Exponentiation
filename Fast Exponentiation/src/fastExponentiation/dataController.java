@@ -6,6 +6,7 @@ public class dataController {
 	public double[] naive2 ;
 	public double[] iterative ;
 	public double[] recursion;
+	
 	public dataController(int[][] values){
 		this.values=values;
 		this.naive1 = new double[values.length];
@@ -13,6 +14,7 @@ public class dataController {
 		this.iterative = new double[values.length];
 		this.recursion = new double[values.length];
 	}
+	 
 	public void setData() {
 		int n = 5;
 		double startTime, endTime;

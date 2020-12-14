@@ -28,7 +28,6 @@ public class LineChart extends JFrame {
             true,
             false
         );  
-  
     ChartPanel panel = new ChartPanel(chart);  
     setContentPane(panel);  
   }  
