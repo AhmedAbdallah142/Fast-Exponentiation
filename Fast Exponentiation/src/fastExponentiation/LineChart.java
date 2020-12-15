@@ -112,6 +112,13 @@ public class LineChart extends JFrame {
 				{ 134217728, 190000000, 268435455 }, { 268435456, 350000000, 536870912 } };
 		data = new DataController(values);
 		data.setData();
+		for (int i = 1; i < data.values.length; i++) {
+			System.out.println("Results for " + i + " bits, When Over flow Occurred the result equal -1 \nnaive 1 => "
+					+ data.naive1[i][0] + "\t naive 2 => " + data.naive2[i][0] + "\t Iterative => " + data.iterative[i][0]
+					+ "\t Recursive => " + data.recursion[i][0]
+					+ "\n------------------------------------------------------------------------------------------");
+		}
+		
 		SwingUtilities.invokeLater(() -> {
 			LineChart example = new LineChart("Naive1 Line Chart");
 			example.setAlwaysOnTop(true);
