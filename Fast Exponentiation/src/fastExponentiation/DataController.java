@@ -52,7 +52,6 @@ public class DataController {
 			iterative[i][1] = average(iterativeTemp);
 			recursion[i][1] = average(recursionTemp);
 		}
-		// System.out.println();
 	}
 
 	private static double average(double[] arr) {

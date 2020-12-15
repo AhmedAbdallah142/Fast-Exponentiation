@@ -6,8 +6,8 @@ public class Methods {
 		long C = 1;
 		for (int i = 0; i < b; i++) {
 			C = C * a;
-			if (C > Integer.MAX_VALUE) {
-				// System.out.println("Over Flow");
+			if (C > Integer.MAX_VALUE) { //check over flow 
+				// return -1 when overFlow Occured
 				return -1;
 			}
 		}
@@ -19,8 +19,8 @@ public class Methods {
 		long C = 1;
 		for (int i = 0; i < b; i++) {
 			C = (C * a);
-			if (C > Integer.MAX_VALUE) {
-				// System.out.println("Over Flow");
+			if (C > Integer.MAX_VALUE) {//check over flow 
+				// //check over flow 
 				return -1;
 			}
 			C = C % m;

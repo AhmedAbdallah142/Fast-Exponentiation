@@ -29,11 +29,11 @@ public class LineChart extends JFrame {
 
 	private DefaultCategoryDataset createDataset(String chartTitle) {
 		String series1 = "Naive 1 Method", series2 = "Naive 2 Method", series3 = "Iterative Method",
-				series4 = "Recursive Method";
+				series4 = "Recursive Method"; //chart series
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 		switch (chartTitle) {
 		case "Line Chart": {
-			for (int i = 1; i < data.values.length; i++) {
+			for (int i = 1; i < data.values.length; i++) {//collect data at line chart 
 				if (data.naive1[i][0] != -1.0) {
 					dataset.addValue(data.naive1[i][1], series1, (i) + "");
 				} else {
@@ -57,8 +57,8 @@ public class LineChart extends JFrame {
 			}
 			break;
 		}
-		case "Naive1 Line Chart": {
-			for (int i = 1; i < data.values.length; i++) {
+		case "Naive1 Line Chart": { 
+			for (int i = 1; i < data.values.length; i++) {//collect data at Naive 1 line chart
 				if (data.naive1[i][0] != -1.0) {
 					dataset.addValue(data.naive1[i][1], series1, (i) + "");
 				} else {
@@ -68,7 +68,7 @@ public class LineChart extends JFrame {
 			break;
 		}
 		case "Naive2 Line Chart": {
-			for (int i = 1; i < data.values.length; i++) {
+			for (int i = 1; i < data.values.length; i++) {//collect data at Naive 2 line chart
 				if (data.naive2[i][0] != -1.0) {
 					dataset.addValue(data.naive2[i][1], series2, (i) + "");
 				} else {
@@ -78,7 +78,7 @@ public class LineChart extends JFrame {
 			break;
 		}
 		case "Iterative Line Chart": {
-			for (int i = 1; i < data.values.length; i++) {
+			for (int i = 1; i < data.values.length; i++) {//collect data at Iterative line chart
 				if (data.iterative[i][0] != -1.0) {
 					dataset.addValue(data.iterative[i][1], series3, (i) + "");
 				} else {
@@ -88,7 +88,7 @@ public class LineChart extends JFrame {
 			break;
 		}
 		case "Recursive Line Chart": {
-			for (int i = 1; i < data.values.length; i++) {
+			for (int i = 1; i < data.values.length; i++) {//collect data at Recursive line chart
 				if (data.recursion[i][0] != -1.0) {
 					dataset.addValue(data.recursion[i][1], series4, (i) + "");
 				} else {
@@ -102,6 +102,7 @@ public class LineChart extends JFrame {
 	}
 
 	public static void main(String[] args) {
+		//array of used values
 		long[][] values = { { 1, 1, 1 }, { 1, 1, 1 }, { 2, 3, 4 }, { 4, 5, 7 }, { 8, 10, 15 }, { 16, 25, 31 },
 				{ 32, 40, 63 }, { 64, 100, 127 }, { 128, 200, 255 }, { 256, 350, 511 }, { 512, 900, 1023 },
 				{ 1024, 1500, 2047 }, { 2048, 3000, 4095 }, { 4096, 6000, 8191 }, { 8192, 10000, 16383 },
@@ -111,14 +112,15 @@ public class LineChart extends JFrame {
 				{ 16777216, 20000000, 33554431 }, { 33554432, 50000000, 67108863 }, { 67108864, 100000000, 134217727 },
 				{ 134217728, 190000000, 268435455 }, { 268435456, 350000000, 536870912 } };
 		data = new DataController(values);
-		data.setData();
-		for (int i = 1; i < data.values.length; i++) {
+		data.setData();	//set the data to the program and methods
+		for (int i = 1; i < data.values.length; i++) {//print results
 			System.out.println("Results for " + i + " bits, When Over flow Occurred the result equal -1 \nnaive 1 => "
 					+ data.naive1[i][0] + "\t naive 2 => " + data.naive2[i][0] + "\t Iterative => " + data.iterative[i][0]
 					+ "\t Recursive => " + data.recursion[i][0]
 					+ "\n------------------------------------------------------------------------------------------");
 		}
 		
+		//////////////////////////Many forms of charts to display the methods////////////////////////////////////////
 		SwingUtilities.invokeLater(() -> {
 			LineChart example = new LineChart("Naive1 Line Chart");
 			example.setAlwaysOnTop(true);
